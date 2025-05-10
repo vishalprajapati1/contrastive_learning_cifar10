@@ -4,12 +4,14 @@
 CIFAR-10 dataset (https://www.cs.toronto.edu/~kriz/cifar.html) contains 32x32 color images (RBG images with 3 channel) with labels across 10 different classes like Airplane, Automobile, Bird, and so on. And the dataset has 60k images which are divided into 50k training images and 10k testing images. 
 
 ![cifar-10 sample](images/cifar_10_dataset_sample.png)
+
 *(Image credit: https://www.cs.toronto.edu/~kriz/cifar.html)*
 
 
 ### About Contrastive Learning
 
 ![Illustration of learned embedding space](images/representation_learning_1.png)
+
 *(Image credit: https://ai.stanford.edu/blog/understanding-contrastive-learning/)*
 
 
@@ -27,6 +29,7 @@ here:
 3. $A$ is the anchor point, $P$ is the positive point, and $N$ is the negative point.
 
 [![](https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Triplet_Loss_Minimization.png/330px-Triplet_Loss_Minimization.png)](https://en.wikipedia.org/wiki/File:Triplet_Loss_Minimization.png)
+
 (*Image credit:* https://en.wikipedia.org/wiki/Triplet_loss)
 
 **Anchor**: The reference data point used as the basis for comparison.  
@@ -38,13 +41,15 @@ During training, we sample an **anchor (A)**, then select a **positive (P)** 
 ### Description of training
 
 ![model architecture](images/model_architecture.png)
+*(Our model architecture)*
 
 We first trained the encoder as described above and we want to classify the images into one of the 10 categories and for this we fine-tuned a small neural network that takes the encoder's output as the input. We used cross entropy loss function for the training of the neural network.
 
 ### Results
 
 ![tsne_plot](images/tsne.png)
-*t-SNE plot of output of encoder*
+
+*(t-SNE plot of output of encoder)*
 
 ![accuracy_plot](images/acc_nn.png)
 
